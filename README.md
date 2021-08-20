@@ -18,6 +18,38 @@ Codename:	buster
 ### Dashboard Preview ###
 ![KSMNETWORK](https://singular.rmrk.app/_next/image?url=https%3A%2F%2Frmrk.mypinata.cloud%2Fipfs%2Fbafybeihumnzmwxvvq7foexpebhpaoqcqnpykqubq44yeoxmddidfvnlapy&w=3840&q=90)
 
+* Logs are obtained by the scrapping job "journal" from the journalled logs to systemd-journal, 
+* it will also handle the syslog severity codes and they will be labaled on the fly for you.
+* The relable_configs will provide you with a simple "unit" & "hostname" labels where you can separate multi-nodes bu hostnme 
+* as a uniqe value. Most of the logs are droped since this monitoring is focused only on the PolkaDOT default logs level="info" 
+* but you can always drop more if you detect some.. by adding a match stage to the pipilene with a selector unit 
+* '{job="systemd-journal", unit="<UNIT.NAME>"}'
+```
+  - match:
+      selector: '{job="systemd-journal", unit="init.scope"}'
+      action: drop
+      drop_counter_reason: promtail_logs
+```
+* Logging... well regex ".*", shall explain everything.
+* Grafana Dashboard is quite simple as it looks, more like the host terminal with some extra visial statistics,
+* don't forget the "{{hostname}}" the lable is quite helpfull on multi-node setups. 
+* Try it and don't be greedy on the regexp, there is a query limit configuration in the setting by default is 1000 if you want to adjust it, go do it!
+* We are setting the lables at the Loki querys and then they are transformed to fields and filtered by names to suite the graphs needs.
+
+
+### Simple query for Unit Service Logs ###
+* https://grafana.com/docs/loki/latest/logql/
+```
+=: exactly equal
+!=: not equal
+=~: regex matches
+!~: regex does not match
+Regex log stream examples:
+```
+* Example
+```
+{unit="polkadot.service"} |= " Idle "
+```
 
 ---
 ### Grafana ###
