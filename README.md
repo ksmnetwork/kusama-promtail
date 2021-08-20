@@ -2,7 +2,6 @@
 
 ## Simple logging for KUSAMA and POLKADOT Validator based on the level="info" logs by the application. ##
 ### KUSAMA GRAFANA LOKI PROMTAIL ###
-
 * KUSAMA is WILD!
 * Grafana is an feature-rich metrics dashboard and graph editor
 * Loki is the logging engine.
@@ -739,3 +738,16 @@ systemctl enable promtail.service \
   "version": 130
 }
 ```
+
+# For Support && Nominations #
+* Display name. KSMNETWORK && KSMNETWORK-WEST 
+* Email w3f@ksm.network
+* Riot @gtoocool:matrix.org
+
+* KUSAMA (KSM) Address
+* H1bSKJxoxzxYRCdGQutVqFGeW7xU3AcN6vyEdZBU7Qb1rsZ
+
+* PolkaDOT (DOT) Address:
+* 15FxvBFDd3X7H9qcMGqsiuvFYEg4D3mBoTA2LQufreysTHKA
+
+* https://ksm.network
