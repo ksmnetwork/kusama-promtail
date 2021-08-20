@@ -13,16 +13,15 @@ Release:	10
 Codename:	buster
 
 ## Installation ##
-### If you already runnig Grafana jusd add Loki as a Data Source and install the Promtail agent on the KUSAMA Node 'Step 3'. ###
+### If you already running Grafana just add Loki as a Data Source and install the Promtail agent on the KUSAMA/PolkaDOT 'Step 3'. ###
 
 ### Dashboard Preview ###
 ![KSMNETWORK](https://singular.rmrk.app/_next/image?url=https%3A%2F%2Frmrk.mypinata.cloud%2Fipfs%2Fbafybeihumnzmwxvvq7foexpebhpaoqcqnpykqubq44yeoxmddidfvnlapy&w=3840&q=90)
 
-* Logs are obtained by the scrapping job "journal" from the journalled logs to systemd-journal, 
-* it will also handle the syslog severity codes and they will be labaled on the fly for you.
-* The relable_configs will provide you with a simple "unit" & "hostname" labels where you can separate multi-nodes bu hostnme 
-* as a uniqe value. Most of the logs are droped since this monitoring is focused only on the PolkaDOT default logs level="info" 
-* but you can always drop more if you detect some.. by adding a match stage to the pipilene with a selector unit 
+* Logs are obtained by the scrapping job "journal" from the systemd-journal, 
+* The relabel_configs will provide you with a simple "unit" & "hostname" labels where you can separate multi-nodes by hostname 
+* as a unique value. Most of the logs are dropped since this monitoring is focused only on the PolkaDOT default logs level="info" 
+* but you can always drop more if you detect some.. by adding a match stage to the pipeline with a selector unit 
 * '{job="systemd-journal", unit="<UNIT.NAME>"}'
 ```
   - match:
@@ -31,10 +30,10 @@ Codename:	buster
       drop_counter_reason: promtail_logs
 ```
 * Logging... well regex ".*", shall explain everything.
-* Grafana Dashboard is quite simple as it looks, more like the host terminal with some extra visial statistics,
-* don't forget the "{{hostname}}" the lable is quite helpfull on multi-node setups. 
-* Try it and don't be greedy on the regexp, there is a query limit configuration in the setting by default is 1000 if you want to adjust it, go do it!
-* We are setting the lables at the Loki querys and then they are transformed to fields and filtered by names to suite the graphs needs.
+* Grafana Dashboard is quite simple as it looks, more like the host terminal with some extra visual statistics,
+* don't forget the "{{hostname}}" the label is quite helpful on multi-node setups. 
+* Query limit configuration in the setting by default is 1000 if you want to adjust it, go do it!
+* Labels set at the queries and then they are transformed to fields, filtered by names to suite the graphs needs.
 
 
 ### Simple query for Unit Service Logs ###
@@ -116,12 +115,11 @@ ingester:
         store: inmemory
       replication_factor: 1
     final_sleep: 0s
-  chunk_idle_period: 1h       # Any chunk not receiving new logs in this time will be flushed
-  max_chunk_age: 1h           # All chunks will be flushed when they hit this age, default is 1h
-  chunk_target_size: 1048576  # Loki will attempt to build chunks up to 1.5MB, flushing first if chunk_idle_period or max_chunk_age is reached first
-  chunk_retain_period: 30s    # Must be greater than index read cache TTL if using an index cache (Default index read cache TTL is 5m)
-  max_transfer_retries: 0     # Chunk transfers disabled
-
+  chunk_idle_period: 1h       
+  max_chunk_age: 1h           
+  chunk_target_size: 1048576  
+  chunk_retain_period: 30s    
+  max_transfer_retries: 0
 schema_config:
   configs:
     - from: 2020-10-24
@@ -136,7 +134,7 @@ storage_config:
   boltdb_shipper:
     active_index_directory: /tmp/loki/boltdb-shipper-active
     cache_location: /tmp/loki/boltdb-shipper-cache
-    cache_ttl: 24h         # Can be increased for faster performance over longer query periods, uses more disk space
+    cache_ttl: 24h
     shared_store: filesystem
   filesystem:
     directory: /tmp/loki/chunks
