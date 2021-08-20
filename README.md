@@ -16,7 +16,7 @@ Codename:	buster
 ### If you already runnig Grafana jusd add Loki as a Data Source and install the Promtail agent on the KUSAMA Node 'Step 3'. ###
 
 ### Dashboard Preview ###
-[![KSMNETWORK](https://singular.rmrk.app/_next/image?url=https%3A%2F%2Frmrk.mypinata.cloud%2Fipfs%2Fbafybeihumnzmwxvvq7foexpebhpaoqcqnpykqubq44yeoxmddidfvnlapy&w=3840&q=90)](https://www.youtube.com/watch?v=bMegZaFfrzI)
+![KSMNETWORK](https://singular.rmrk.app/_next/image?url=https%3A%2F%2Frmrk.mypinata.cloud%2Fipfs%2Fbafybeihumnzmwxvvq7foexpebhpaoqcqnpykqubq44yeoxmddidfvnlapy&w=3840&q=90)
 
 
 ---
