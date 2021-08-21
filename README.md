@@ -11,7 +11,7 @@ Distributor ID:	Debian
 Description:	Debian GNU/Linux 10 (buster)
 Release:	10
 Codename:	buster
-
+  
 ## Installation ##
 ### If you already running Grafana just add Loki as a Data Source and install the Promtail agent on the KUSAMA/PolkaDOT 'Step 3'. ###
 ### Grafana dashboard can be installed from https://grafana.com/grafana/dashboards/14899 ###
@@ -770,15 +770,23 @@ systemctl enable promtail.service \
 }
 ```
 
+## Stress less project ###
+* Grafana Cloud Monitoring for KUSAMA/PolkaDOT Validators with a single agent installation, PROMTAIL v2.3.0
+* No need to install Grafana
+* No need to setup Loki
+* Serveless Setup
+* URL https://github.com/TGReaper/kusama-cloud
+
+---
 # For Support && Nominations #
 * Display name. KSMNETWORK && KSMNETWORK-WEST 
 * Email w3f@ksm.network
 * Riot @gtoocool:matrix.org
 
 * KUSAMA (KSM) Address
-* H1bSKJxoxzxYRCdGQutVqFGeW7xU3AcN6vyEdZBU7Qb1rsZ
+* ```H1bSKJxoxzxYRCdGQutVqFGeW7xU3AcN6vyEdZBU7Qb1rsZ```
 
 * PolkaDOT (DOT) Address:
-* 15FxvBFDd3X7H9qcMGqsiuvFYEg4D3mBoTA2LQufreysTHKA
+* ```15FxvBFDd3X7H9qcMGqsiuvFYEg4D3mBoTA2LQufreysTHKA```
 
 * https://ksm.network
