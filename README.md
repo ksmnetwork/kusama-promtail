@@ -3,7 +3,7 @@
 ## Simple logging for KUSAMA and POLKADOT Validator based on the level="info" logs by the application. ##
 ### KUSAMA GRAFANA LOKI PROMTAIL ###
 * KUSAMA is WILD!
-* Grafana is an feature-rich metrics dashboard and graph editor
+* Grafana is a feature-rich metrics dashboard and graph editor
 * Loki is the logging engine.
 * Promtail sends logs to Loki
 
@@ -300,7 +300,7 @@ systemctl enable promtail.service \
       }
     ]
   },
-  "description": "A basic monitoring based on the Pokkadot log level='info' ",
+  "description": "A basic monitoring based on the Polkadot log level='info' ",
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
