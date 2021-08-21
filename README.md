@@ -771,7 +771,7 @@ systemctl enable promtail.service \
 ```
 
 ## Stress less project ###
-* Grafana Cloud Monitoring for KUSAMA/PolkaDOT Validators with a single agent installation, PROMTAIL v2.3.0
+* Grafana Cloud Monitoring for KUSAMA/PolkaDOT Validators with a single agent installation, PROMTAIL
 * No need to install Grafana
 * No need to setup Loki
 * Serveless Setup
