@@ -188,7 +188,7 @@ apt install unzip \
 ```
 cat <<EOF>/opt/promtail/polkadot-config.yaml
 server:
-  http_listen_port: 8579
+  http_listen_port: 0
   grpc_listen_port: 0
 clients:
   - url: http://<HOST>:3100/loki/api/v1/push
