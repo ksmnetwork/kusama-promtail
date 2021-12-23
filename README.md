@@ -775,7 +775,7 @@ systemctl enable promtail.service \
 * No need to install Grafana
 * No need to setup Loki
 * Serveless Setup
-* URL https://github.com/TGReaper/kusama-cloud
+* URL https://github.com/ksmnetwork/kusama-cloud
 
 ---
 # For Support && Nominations #
